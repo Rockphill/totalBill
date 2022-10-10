@@ -33,6 +33,20 @@ class MainViewController: UIViewController {
         
     }()
     
+    lazy var calculateButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("CALCULATE", for: .normal)
+        button.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.5647058824, green: 0.1529411765, blue: 0.7450980392, alpha: 1)
+        button.layer.cornerRadius = 10
+        button.titleLabel?.font = UIFont(name: "Avenir Next", size: 20)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    let totalBillView = TotalBillView()
+    let personsView = PeraonsView()
+    
     let logoImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "logo")
@@ -49,11 +63,14 @@ class MainViewController: UIViewController {
     
     
     func setupViews() {
-        view.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0.911803782, green: 0.911803782, blue: 0.911803782, alpha: 1)
         
         view.addSubview(logoImageView)
         view.addSubview(titleLabel)
         view.addSubview(descriptionLabel)
+        view.addSubview(totalBillView)
+        view.addSubview(personsView)
+        view.addSubview(calculateButton)
         
     }
 
@@ -74,6 +91,22 @@ extension MainViewController {
             descriptionLabel.topAnchor.constraint(equalTo: logoImageView.bottomAnchor, constant: 15),
             descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             descriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
+            totalBillView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 10),
+            totalBillView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            totalBillView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            totalBillView.heightAnchor.constraint(equalToConstant: 130),
+            
+            personsView.topAnchor.constraint(equalTo: totalBillView.bottomAnchor, constant: 10),
+            personsView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            personsView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            personsView.heightAnchor.constraint(equalToConstant: 130),
+            
+            calculateButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            calculateButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            calculateButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            calculateButton.heightAnchor.constraint(equalToConstant: 60)
+            
 
         ])
         
