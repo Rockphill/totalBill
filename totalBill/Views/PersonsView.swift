@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PeraonsView: UIView{
+class PersonsView: UIView{
     
     let titleLabel: UILabel = {
         let label = UILabel()

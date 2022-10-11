@@ -15,6 +15,8 @@
 		65791CB728E5B5630040E699 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65791CB528E5B5630040E699 /* LaunchScreen.storyboard */; };
 		65A6A04F28F3E5EE0020888B /* TotalBillView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A6A04E28F3E5EE0020888B /* TotalBillView.swift */; };
 		65A6A05128F42D540020888B /* PersonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A6A05028F42D540020888B /* PersonsView.swift */; };
+		65A6A05528F45FAF0020888B /* TipsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A6A05428F45FAF0020888B /* TipsCollectionViewCell.swift */; };
+		65A6A05B28F4638F0020888B /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A6A05A28F4638F0020888B /* TipsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		65791CB828E5B5630040E699 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65A6A04E28F3E5EE0020888B /* TotalBillView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalBillView.swift; sourceTree = "<group>"; };
 		65A6A05028F42D540020888B /* PersonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsView.swift; sourceTree = "<group>"; };
+		65A6A05428F45FAF0020888B /* TipsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsCollectionViewCell.swift; sourceTree = "<group>"; };
+		65A6A05A28F4638F0020888B /* TipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,17 +64,51 @@
 		65791CA928E5B5620040E699 /* totalBill */ = {
 			isa = PBXGroup;
 			children = (
-				65791CAA28E5B5620040E699 /* AppDelegate.swift */,
-				65791CAC28E5B5620040E699 /* SceneDelegate.swift */,
-				65791CAE28E5B5620040E699 /* MainViewController.swift */,
-				65A6A04E28F3E5EE0020888B /* TotalBillView.swift */,
-				65A6A05028F42D540020888B /* PersonsView.swift */,
+				65A6A05628F45FEE0020888B /* Application */,
+				65A6A05728F4600F0020888B /* Controllers */,
+				65A6A05828F4603A0020888B /* Views */,
 				65791CB028E5B5620040E699 /* Main.storyboard */,
 				65791CB328E5B5630040E699 /* Assets.xcassets */,
 				65791CB528E5B5630040E699 /* LaunchScreen.storyboard */,
 				65791CB828E5B5630040E699 /* Info.plist */,
 			);
 			path = totalBill;
+			sourceTree = "<group>";
+		};
+		65A6A05628F45FEE0020888B /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				65791CAA28E5B5620040E699 /* AppDelegate.swift */,
+				65791CAC28E5B5620040E699 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		65A6A05728F4600F0020888B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				65791CAE28E5B5620040E699 /* MainViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		65A6A05828F4603A0020888B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				65A6A05928F460730020888B /* Cells */,
+				65A6A04E28F3E5EE0020888B /* TotalBillView.swift */,
+				65A6A05A28F4638F0020888B /* TipsView.swift */,
+				65A6A05028F42D540020888B /* PersonsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		65A6A05928F460730020888B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				65A6A05428F45FAF0020888B /* TipsCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +185,8 @@
 				65A6A04F28F3E5EE0020888B /* TotalBillView.swift in Sources */,
 				65A6A05128F42D540020888B /* PersonsView.swift in Sources */,
 				65791CAF28E5B5620040E699 /* MainViewController.swift in Sources */,
+				65A6A05528F45FAF0020888B /* TipsCollectionViewCell.swift in Sources */,
+				65A6A05B28F4638F0020888B /* TipsView.swift in Sources */,
 				65791CAB28E5B5620040E699 /* AppDelegate.swift in Sources */,
 				65791CAD28E5B5620040E699 /* SceneDelegate.swift in Sources */,
 			);
