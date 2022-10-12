@@ -40,9 +40,38 @@ class MainViewController: UIViewController {
         button.backgroundColor = #colorLiteral(red: 0.5647058824, green: 0.1529411765, blue: 0.7450980392, alpha: 1)
         button.layer.cornerRadius = 10
         button.titleLabel?.font = UIFont(name: "Avenir Next", size: 20)
+        button.addTarget(self, action: #selector(calculateButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
+    @objc func calculateButtonTapped() {
+        guard let totalBill = totalBillView.summTextField.text,
+              let totalBillInt = Int(totalBill) else { return }
+        
+        let summ = totalBillInt + totalBillInt * tipsView.tipsCount / 100
+        let persons = personsView.counter
+        
+        if persons == 0 {
+            descriptionLabel.text = "Enter persons count"
+            descriptionLabel.textColor = .red
+        } else {
+            let result = summ / persons
+            descriptionLabel.text = "\(result) per persons"
+            descriptionLabel.textColor = .black
+        }
+        
+    }
+    
+    func addTap() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func hideKeyboard() {
+        view.endEditing(true)
+    }
     
     let totalBillView = TotalBillView()
     let personsView = PersonsView()
@@ -61,14 +90,15 @@ class MainViewController: UIViewController {
         
         setupViews()
         setContstraints()
+        addTap()
     }
     
     
     func setupViews() {
         view.backgroundColor = #colorLiteral(red: 0.911803782, green: 0.911803782, blue: 0.911803782, alpha: 1)
         
-        view.addSubview(logoImageView)
         view.addSubview(titleLabel)
+        view.addSubview(logoImageView)
         view.addSubview(descriptionLabel)
         view.addSubview(totalBillView)
         view.addSubview(personsView)
@@ -110,7 +140,7 @@ extension MainViewController {
             tipsView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             tipsView.heightAnchor.constraint(equalToConstant: 130),
             
-            calculateButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            calculateButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 0),
             calculateButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             calculateButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             calculateButton.heightAnchor.constraint(equalToConstant: 60),
